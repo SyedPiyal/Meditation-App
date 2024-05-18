@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medic_meditation/view/home/home_view.dart';
 import 'package:medic_meditation/view/signUp/signup_view.dart';
 
 class LoginView extends StatelessWidget {
@@ -95,30 +96,34 @@ class LoginView extends StatelessWidget {
                           width: media.size.width,
                           child: ElevatedButton(
                             onPressed: () {
-
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeView(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFF7C9A92),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ) // Set the background color here
-                            ),
+                                ),
                             child: const Text(
                               'LOGIN',
                               style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
-
                               ),
                             ),
                           ),
                         ),
                       ),
 
-                       Row(
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -132,26 +137,27 @@ class LoginView extends StatelessWidget {
                           // signup text button ----------------------
 
                           TextButton(
-                             onPressed: () {
-                               Navigator.push(
-                                 context,
-                                 MaterialPageRoute(
-                                   builder: (context) =>const SignUpView(),
-                                 ),
-                               );
-                             },
-                            style:TextButton.styleFrom(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUpView(),
+                                ),
+                              );
+                            },
+                            style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
-                            ),child: const Text(
-                            " Sign Up",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Alegreya',
-                                color: Colors.white),),
+                            ),
+                            child: const Text(
+                              " Sign Up",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Alegreya',
+                                  color: Colors.white),
+                            ),
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ),
@@ -161,13 +167,13 @@ class LoginView extends StatelessWidget {
                 child: SizedBox(
                   width: media.size.width,
                   child: Image.asset(
-                    'assets/images/login.png', fit: BoxFit.cover,),
+                    'assets/images/login.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               )
             ],
-          )
-
-      ),
+          )),
     );
   }
 }
