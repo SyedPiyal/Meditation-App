@@ -81,6 +81,9 @@ flutter:
     - family: Alegreya
       fonts:
         - asset: assets/fonts/Alegreya-VariableFont_wght.ttf
+        - asset: assets/fonts/AlegreyaSans-Black.ttf
+        - asset: assets/fonts/AlegreyaSans-BlackItalic.ttf
+        - asset: assets/fonts/AlegreyaSans-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

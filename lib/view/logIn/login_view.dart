@@ -44,7 +44,7 @@ class LoginView extends StatelessWidget {
                             fontSize: 30),
                       ),
                       const Text(
-                        "Sign in now to acces your excercises and saved music.",
+                        "Sign in now to access your exercises and saved music.",
                         style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w300,

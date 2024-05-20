@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medic_meditation/view/home/widgets/container.dart';
+import 'package:medic_meditation/view/home/widgets/items.dart';
+
+import '../../utils/strings/strings.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -62,27 +66,68 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Welcome back, Afreen!',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Alegreya',
-                  color: Colors.white,
-                  fontSize: 30),
-            ),
-            Text(
-              "How are you feeling today ?",
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white),
-            ),
-          ],
+
+      //--------------> Body <--------------//
+      body:  Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Welcome back, Afreen!',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Alegreya',
+                    color: Colors.white,
+                    fontSize: 30),
+              ),
+              const Text(
+                "How are you feeling today ?",
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white),
+              ),
+
+              // item list ----------------------
+
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ItemWidgets(
+                        imagePath: 'assets/images/ic_calm.png',
+                        itemTitle: 'Calm'),
+                    ItemWidgets(
+                        imagePath: 'assets/images/ic_relax.png',
+                        itemTitle: 'Relax'),
+                    ItemWidgets(
+                        imagePath: 'assets/images/ic_focus.png',
+                        itemTitle: 'Focus'),
+                    ItemWidgets(
+                        imagePath: 'assets/images/ic_anxious.png',
+                        itemTitle: 'Anxious'),
+                  ],
+                ),
+              ),
+
+              // container for video ----------------------
+              ContainerWidget(
+                  imagesPath:
+                  meditationImagePath,
+                  listTitle: "Meditation 101",
+                  listSubTitle: "Techniques, Benefits, and a Beginner’s How-To..."),
+              SizedBox(height: 20,),
+              ContainerWidget(
+                  imagesPath:
+                  meditationImagePath,
+                  listTitle: "Cardio Meditation",
+                  listSubTitle: "Basics of Yoga for Beginners or Experienced Professionals..."),
+              SizedBox(height: 10,)
+            ],
+          ),
         ),
       ),
     );

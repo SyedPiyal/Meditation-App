@@ -1,0 +1,2 @@
+String meditationImagePath = 'https://img.freepik.com/free-vector/organic-flat-people-meditating-illustration_23-2148906556.jpg';
+String cardioImagePath = 'https://i.pinimg.com/736x/24/a9/d7/24a9d71e51b42960f54ebe989c4f8211.jpg';

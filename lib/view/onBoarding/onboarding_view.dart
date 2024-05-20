@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:medic_meditation/view/logIn/login_view.dart';
 
 class OnBoardingView extends StatelessWidget {
