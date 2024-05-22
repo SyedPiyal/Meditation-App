@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medic_meditation/view/home/home_view.dart';
 import 'package:medic_meditation/view/signUp/signup_view.dart';
 
+import '../bottom_navigation/bottom_navigation.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -99,7 +101,7 @@ class LoginView extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const HomeView(),
+                                  builder: (context) => const BottomNavigationView(),
                                 ),
                               );
                             },

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart'; // Update import statement
 import 'package:medic_meditation/view/onBoarding/onboarding_view.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -31,14 +30,17 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 
       body: Stack(
         children: [
-          Image.asset(
-            "assets/images/sp_bg.png",
+          SizedBox(
             height: media.size.height,
+            width: media.size.width,
+            child: Image.asset(
+              "assets/images/sp_bg.png",
+              fit: BoxFit.fitHeight,
+            ),
           ),
           Center(
-            child: SvgPicture.asset(
+            child: Image.asset(
               'assets/images/logo.svg',
-              semanticsLabel: 'My SVG Image',
               height: media.size.height*.80,
               width: 70,
             ),

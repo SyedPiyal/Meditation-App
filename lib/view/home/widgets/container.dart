@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ContainerWidget extends StatelessWidget {
-  final String imagesPath;
-  final String listTitle;
-  final String listSubTitle;
+  final String? imagesPath;
+  final String? bgImagesPath;
+  final String? listTitle;
+  final String? listSubTitle;
 
   const ContainerWidget(
       {super.key,
-      required this.imagesPath,
-      required this.listTitle,
-      required this.listSubTitle});
+      this.imagesPath,
+      this.listTitle,
+      this.listSubTitle,
+      this.bgImagesPath});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,9 @@ class ContainerWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: const Color(0xffF7F3F0),
+        image: DecorationImage(
+          image: AssetImage(bgImagesPath ?? ""),
+        ),
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -28,19 +33,19 @@ class ContainerWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    listTitle,
+                    listTitle ?? "",
                     style: const TextStyle(
                         fontFamily: 'Alegreya',
                         fontWeight: FontWeight.bold,
-                        fontSize: 23),
+                        fontSize: 15),
                   ),
                   Expanded(
                     child: Text(
-                      listSubTitle,
+                      listSubTitle ?? "",
                       style: const TextStyle(
-                        fontFamily: 'Alegreya',
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Alegreya',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12),
                     ),
                   ),
                   const SizedBox(
@@ -79,11 +84,11 @@ class ContainerWidget extends StatelessWidget {
               ),
             ),
             // image ----------------------
-        
+
             Expanded(
               child: SizedBox(
                 width: 100,
-                child: Image.network(imagesPath),
+                child: Image.network(imagesPath ?? ""),
               ),
             ),
           ],

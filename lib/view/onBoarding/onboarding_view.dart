@@ -10,10 +10,13 @@ class OnBoardingView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset(
-            "assets/images/sp_bg.png",
+          SizedBox(
             height: media.size.height,
             width: media.size.width,
+            child: Image.asset(
+              "assets/images/sp_bg.png",
+             fit: BoxFit.fitHeight,
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

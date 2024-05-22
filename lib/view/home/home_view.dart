@@ -68,7 +68,7 @@ class _HomeViewState extends State<HomeView> {
       ),
 
       //--------------> Body <--------------//
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
         child: SingleChildScrollView(
           child: Column(
@@ -80,12 +80,12 @@ class _HomeViewState extends State<HomeView> {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Alegreya',
                     color: Colors.white,
-                    fontSize: 30),
+                    fontSize: 20),
               ),
               const Text(
                 "How are you feeling today ?",
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w300,
                     color: Colors.white),
               ),
@@ -115,21 +115,26 @@ class _HomeViewState extends State<HomeView> {
 
               // container for video ----------------------
               ContainerWidget(
-                  imagesPath:
-                  meditationImagePath,
+                  imagesPath: meditationImagePath,
                   listTitle: "Meditation 101",
-                  listSubTitle: "Techniques, Benefits, and a Beginner’s How-To..."),
-              SizedBox(height: 20,),
+                  listSubTitle:
+                      "Techniques, Benefits, and a Beginner’s How-To..."),
+              const SizedBox(
+                height: 20,
+              ),
               ContainerWidget(
-                  imagesPath:
-                  meditationImagePath,
+                  imagesPath: meditationImagePath,
                   listTitle: "Cardio Meditation",
-                  listSubTitle: "Basics of Yoga for Beginners or Experienced Professionals..."),
-              SizedBox(height: 10,)
+                  listSubTitle:
+                      "Basics of Yoga for Beginners ..."),
+              const SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),
       ),
+
     );
   }
 }
